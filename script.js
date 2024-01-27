@@ -34,14 +34,67 @@ document.addEventListener('keydown', function (e) {
 /////////////////////////////////////
 /////////////////////////////////////
 
-console.log(document.documentElement)
-console.log(document.head)
-console.log(document.body)
+// Selecting elements
+console.log(document.documentElement);
+console.log(document.head);
+console.log(document.body);
 
-document.querySelector('.header');
+const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
 console.log(allSections);
 
 document.getElementById('section--1');
 const allButtons = document.getElementsByTagName('button');
-console.log(allButtons)
+console.log(allButtons);
+
+console.log(document.getElementsByClassName('btn'));
+
+// Creating and inserting elements
+const message = document.createElement('div');
+message.classList.add('cookie-message');
+// message.textContent = 'We use cookies for improved functionality and analytics.';
+message.innerHTML =
+  'We use cookies for improved functionality and analytics. <button class="btn btn--close-cookie">Got it!</button>';
+
+// header.prepend(message);
+header.append(message);
+// header.append(message.cloneNode(true));
+
+// header.before(message);
+// header.after(message);
+
+// Delete elements
+document
+  .querySelector('.btn--close-cookie')
+  .addEventListener('click', function () {
+    // message.remove();  // This is the new way
+    message.parentElement.removeChild(message); // This is the old way
+  });
+
+// Styles
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(message.style.height); // Doesn't show up; has to be in-line style that we set ourselves
+console.log(message.style.backgroundColor); // This works because we set this ourselves in script
+
+console.log(getComputedStyle(message).color); // This is how you get styles we don't define ourselves
+console.log(getComputedStyle(message).height);
+
+// message.style.height = parseFloat(getComputedStyle(message).height) + 30 + 'px';
+
+// Log initial styles
+console.log("Initial Computed Height:", getComputedStyle(message).height);
+
+// Set the height after appending to the DOM
+message.style.height =
+  parseFloat(getComputedStyle(message).height) + 30 + 'px';
+
+// Log updated styles
+console.log("Updated Inline Height:", message.style.height);
+console.log("Updated Computed Height:", getComputedStyle(message).height);
+
+// console.log(message.style.height);
+// console.log(getComputedStyle(message).height);
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');

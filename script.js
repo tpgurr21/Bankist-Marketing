@@ -34,6 +34,8 @@ document.addEventListener('keydown', function (e) {
 /////////////////////////////////////
 /////////////////////////////////////
 
+/*
+
 // Selecting elements
 console.log(document.documentElement);
 console.log(document.head);
@@ -100,5 +102,44 @@ console.log("Updated Computed Height:", getComputedStyle(message).height);
 document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 // Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
 
-<
+console.log(logo.className);
+
+logo.alt = 'Beautiful minimalist logo';
+// Non-standard
+console.log(logo.designer); // custom attributes don't work
+console.log(logo.getAttribute('designer'));
+logo.setAttribute('company', 'Bankist');
+
+
+console.log(logo.src);
+console.log(logo.getAttribute('src'))
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+// Data attributes\
+console.log(logo.dataset.versionNumber)
+
+// Classes
+logo.classList.add('c', 'j');
+logo.classList.remove('c');
+logo.classList.toggle('c');
+logo.classList.contains('c'); // not includes
+
+// Don't use
+logo.className = 'jonas' // allows only one class, and overrides any other classes
+*/
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+btnScrollTo.addEventListener('click', function(e) {
+  const s1coords = section1.getBoundingClientRect();
+  console.log(s1coords);
+
+  console.log(e.target.getBoundingClientRect())
+})

@@ -98,3 +98,7 @@ console.log("Updated Computed Height:", getComputedStyle(message).height);
 // console.log(getComputedStyle(message).height);
 
 document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// Attributes
+
+<

@@ -142,4 +142,4 @@ btnScrollTo.addEventListener('click', function(e) {
   console.log(s1coords);
 
   console.log(e.target.getBoundingClientRect())
-})
+});

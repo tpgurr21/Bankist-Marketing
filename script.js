@@ -9,7 +9,6 @@ const section1 = document.querySelector('#section--1');
 /////////////////////////////////////
 // Modal window
 
-
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -60,12 +59,21 @@ btnScrollTo.addEventListener('click', function (e) {
   //   behavior: 'smooth',
   // })
 
-  section1.scrollIntoView({behavior: 'smooth'})
+  section1.scrollIntoView({ behavior: 'smooth' });
 });
 
 /////////////////////////////////////
 
 // Page navigation
+
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = this.getAttribute('href');
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  });
+});
 
 /////////////////////////////////////
 /////////////////////////////////////

@@ -93,7 +93,11 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
-tabs.forEach(t=>t.addEventListener('click' () => console.log('TAB')))
+// tabs.forEach(t=>t.addEventListener('click', () => console.log('TAB'))) 
+tabsContainer.addEventListener('click', function(e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+})
 
 /////////////////////////////////////
 /////////////////////////////////////
@@ -253,7 +257,7 @@ console.log(h1.children);
 h1.firstElementChild.style.color = 'white';
 h1.lastElementChild.style.color = 'orangered';
 
-// Going downwards: parents
+// Going upwards: parents
 console.log(h1.parentNode);
 console.log(h1.parentElement);
 

@@ -94,7 +94,6 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 
 // Tabbed component
 
-
 // tabs.forEach(t=>t.addEventListener('click', () => console.log('TAB')))
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
@@ -116,16 +115,31 @@ tabsContainer.addEventListener('click', function (e) {
 });
 
 // Menu fade animation
-nav.addEventListener('mouseover', function(e) {
-  if(e.target.classList.contains('nav__link')) {
-    
+nav.addEventListener('mouseover', function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = 0.5;
+    });
+    logo.style.opacity = 0.5;
   }
-} )
+});
 
-nav.addEventListener('mouseout', function(e) {
+nav.addEventListener('mouseout', function (e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
 
-} )
-
+    siblings.forEach(el => {
+      if (el !== link) el.style.opacity = 1;
+    });
+    logo.style.opacity = 1;
+  }
+});
 
 /////////////////////////////////////
 /////////////////////////////////////

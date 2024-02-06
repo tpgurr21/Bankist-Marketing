@@ -137,6 +137,19 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 // });
 
 nav.addEventListener('mouseout', handleHover.bind(1));
+
+// Sticky navigation
+window.addEventListener('scroll', function () {
+  console.log(window.scrollY);
+  ///////////////////////////// ME GOING OFF THE RAILS
+  const x = Math.floor((window.scrollY / document.documentElement.scrollHeight) * 256)
+  console.log(x)
+  
+
+  document.body.style.backgroundColor = `rgb(${x}, 0, 0)`
+  console.log(document.body.style.backgroundColor)
+
+});
 /////////////////////////////////////
 /////////////////////////////////////
 /////////////////////////////////////

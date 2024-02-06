@@ -116,7 +116,7 @@ tabsContainer.addEventListener('click', function (e) {
 
 // Menu fade animation
 const handleHover = function (e) {
-  console.log(this, e.currentTarget);
+  // console.log(this, e.currentTarget);
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
@@ -164,14 +164,21 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 // Sticky navigation: Intersection Observer API
 
-const obsCallback = function() {
+// const obsCallback = function(entries, observer) {
+//   entries.forEach(entry => {
+//     console.log(entry);
+//   })
+// }
 
-}
+// const obsOptions = {
+//   root: null,
+//   threshold: [0, 0.2],
+// }
 
-const obsOptions = {}
+// const observer = new IntersectionObserver(obsCallback, obsOptions);
+// observer.observe(section1)
 
-const observer = new IntersectionObserver(obsCallback, obsOptions);
-observer.observe(section1)
+const header = document.querySelector('.header')
 
 /////////////////////////////////////
 /////////////////////////////////////

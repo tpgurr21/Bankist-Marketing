@@ -139,17 +139,40 @@ nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
 // Sticky navigation
-window.addEventListener('scroll', function () {
-  console.log(window.scrollY);
+// const initialCoords = section1.getBoundingClientRect();
+// console.log(initialCoords);
+
+// window.addEventListener('scroll', function () {
+//   console.log(window.scrollY);
+
+//   if (this.window.scrollY > initialCoords.top) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+
+
+////////////////////////////////////////////
+
+
   ///////////////////////////// ME GOING OFF THE RAILS
-  const x = Math.floor((window.scrollY / document.documentElement.scrollHeight) * 256)
-  console.log(x)
-  
+  // const x = Math.floor(
+  //   (window.scrollY / document.documentElement.scrollHeight) * 256
+  // );
+  // console.log(x);
 
-  document.body.style.backgroundColor = `rgb(${x}, 0, 0)`
-  console.log(document.body.style.backgroundColor)
+  // document.body.style.backgroundColor = `rgb(0, ${(0.5) * x}, ${x})`;
+  // console.log(document.body.style.backgroundColor);
+// });
 
-});
+// Sticky navigation: Intersection Observer API
+
+const obsCallback = function() {
+
+}
+
+const obsOptions = {}
+
+const observer = new IntersectionObserver(obsCallback, obsOptions);
+observer.observe(section1)
+
 /////////////////////////////////////
 /////////////////////////////////////
 /////////////////////////////////////

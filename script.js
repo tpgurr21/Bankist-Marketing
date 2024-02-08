@@ -153,13 +153,13 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 
   ///////////////////////////// ME GOING OFF THE RAILS
-  // const x = Math.floor(
-  //   (window.scrollY / document.documentElement.scrollHeight) * 256
-  // );
-  // console.log(x);
+//   const x = Math.floor(
+//     (window.scrollY / document.documentElement.scrollHeight) * 256
+//   );
+//   console.log(x);
 
-  // document.body.style.backgroundColor = `rgb(0, ${(0.5) * x}, ${x})`;
-  // console.log(document.body.style.backgroundColor);
+//   document.body.style.backgroundColor = `rgb(0, ${(0.5) * x}, ${x})`;
+//   console.log(document.body.style.backgroundColor);
 // });
 
 // Sticky navigation: Intersection Observer API

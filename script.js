@@ -148,11 +148,9 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 //   if (this.window.scrollY > initialCoords.top) nav.classList.add('sticky');
 //   else nav.classList.remove('sticky');
 
-
 ////////////////////////////////////////////
 
-
-  ///////////////////////////// ME GOING OFF THE RAILS
+///////////////////////////// ME GOING OFF THE RAILS
 //   const x = Math.floor(
 //     (window.scrollY / document.documentElement.scrollHeight) * 256
 //   );
@@ -178,21 +176,39 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 // const observer = new IntersectionObserver(obsCallback, obsOptions);
 // observer.observe(section1)
 
-const header = document.querySelector('.header') 
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
 
-const stickyNav = function(entries) {
+const stickyNav = function (entries) {
   const [entry] = entries;
-  console.log(entry);
-  if(!entry.isIntersecting) nav.classList.add('sticky');
+  
+  if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
-}
+};
 
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,
-  rootMargin: `-90px`,
+  rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
+
+// Reveal sections
+const allSections = document.querySelectorAll('.section');
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
 
 /////////////////////////////////////
 /////////////////////////////////////

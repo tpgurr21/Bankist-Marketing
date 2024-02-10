@@ -186,6 +186,7 @@ const stickyNav = function (entries) {
   else nav.classList.remove('sticky');
 };
 
+// Sticky nav
 const headerObserver = new IntersectionObserver(stickyNav, {
   root: null,
   threshold: 0,

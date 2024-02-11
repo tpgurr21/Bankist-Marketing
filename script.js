@@ -173,6 +173,8 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 //   threshold: [0, 0.2],
 // }
 
+// sticky nav
+
 // const observer = new IntersectionObserver(obsCallback, obsOptions);
 // observer.observe(section1)
 // console.log(section1)

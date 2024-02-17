@@ -127,7 +127,7 @@ const handleHover = function (e) {
     });
     logo.style.opacity = this;
   }
-}
+};
 
 // Passing "argument" into handler
 nav.addEventListener('mouseover', handleHover.bind(0.5));
@@ -150,7 +150,7 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 ////////////////////////////////////////////
 
-///////////////////////////// ME GOING OFF THE RAILS
+// /////////////////////////// ME GOING OFF THE RAILS
 //   const x = Math.floor(
 //     (window.scrollY / document.documentElement.scrollHeight) * 256
 //   );
@@ -162,11 +162,11 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 // Sticky navigation: Intersection Observer API
 
-// const obsCallback = function(entries, observer) {
-//   entries.forEach(entry => {
-//     console.log(entry);
-//   })
-// }
+const obsCallback = function(entries, observer) {
+  entries.forEach(entry => {
+    console.log(entry);
+  })
+}
 
 // const obsOptions = {
 //   root: null,
@@ -184,7 +184,7 @@ const navHeight = nav.getBoundingClientRect().height;
 
 const stickyNav = function (entries) {
   const [entry] = entries;
-  
+
   if (!entry.isIntersecting) nav.classList.add('sticky');
   else nav.classList.remove('sticky');
 };
